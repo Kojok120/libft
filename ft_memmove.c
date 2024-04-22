@@ -6,32 +6,34 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 21:06:46 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/18 20:22:38 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/22 20:11:50 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	const unsigned char	*p1;
 	unsigned char		*p2;
-	unsigned char		tmp[n];
 	size_t				i;
 
 	p1 = src;
 	p2 = dest;
-	i = 0;
-	while (i < n)
+	if (p2 > p1)
 	{
-		tmp[i] = p1[i];
-		i++;
+		i = n;
+		while (i-- > 0)
+			p2[i] = p1[i];
 	}
-	i = 0;
-	while (i < n)
+	if (p1 > p2)
 	{
-		p2[i] = tmp[i];
-		i++;
+		i = 0;
+		while (i < n)
+		{
+			p2[i] = p1[i];
+			i++;
+		}
 	}
 	return (dest);
 }

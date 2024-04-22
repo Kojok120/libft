@@ -6,14 +6,13 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:18:15 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/20 13:37:19 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/22 19:44:45 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-size_t ft_max(size_t i, size_t j)
+size_t	ft_max(size_t i, size_t j)
 {
 	if (i >= j)
 		return (i);
@@ -36,7 +35,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
 
 // #include <string.h>
 // #include <stdio.h>
