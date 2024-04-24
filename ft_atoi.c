@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 21:56:59 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/22 19:42:47 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:24:13 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	num = 0;
-	while (str[i] == ' ')
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
 	if (str[i] == '-')
 		sign = -1;

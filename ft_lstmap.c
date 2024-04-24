@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 18:40:52 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/24 19:38:37 by kokamoto         ###   ########.fr       */
+/*   Created: 2024/04/24 19:23:41 by kokamoto          #+#    #+#             */
+/*   Updated: 2024/04/24 20:05:59 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *lst2;
+    // t_list	*newlist;
 
-	lst2 = NULL;
-	while (lst != NULL)
-	{
-		lst2 = lst;
-		lst = lst->next;
-	}
-	return (lst2);
+	// newlist = malloc(sizeof(t_list));
+	// if (newlist == NULL)
+	// 	return (NULL);
+	// while (lst != NULL)
+	// {
+	// 	f(lst->content);
+	// 	lst = lst->next;
+	// }
+
+    f(lst);
+    del(lst);
+    return (lst);
 }

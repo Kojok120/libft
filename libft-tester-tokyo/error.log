@@ -1,16 +1,6 @@
-[test 2] ASSERT_EQ_I failed: ("1") is not equal to expected ("0"). func main at file srcs/test_ft_lstdelone.c, line 50
-Undefined symbols for architecture x86_64:
-  "_ft_lstclear", referenced from:
-      _main in test_ft_lstclear-017c6b.o
-ld: symbol(s) not found for architecture x86_64
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-Undefined symbols for architecture x86_64:
-  "_ft_lstiter", referenced from:
-      _main in test_ft_lstiter-93d7b5.o
-ld: symbol(s) not found for architecture x86_64
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-Undefined symbols for architecture x86_64:
-  "_ft_lstmap", referenced from:
-      _main in test_ft_lstmap-4f09d4.o
-ld: symbol(s) not found for architecture x86_64
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
+[test 1] ASSERT_EQ_STR failed: ("Hello") is not equal to expected ("HELLO"). func main at file srcs/test_ft_lstmap.c, line 49
+[test 2] ASSERT_EQ_STR failed: (" World") is not equal to expected (" WORLD"). func main at file srcs/test_ft_lstmap.c, line 50
+[test 4] ASSERT_EQ_STR failed: (" Tokyo!") is not equal to expected (" TOKYO!"). func main at file srcs/test_ft_lstmap.c, line 52
+[test 7] ASSERT_EQ_STR failed: ("Hello") is not equal to expected ("hello"). func main at file srcs/test_ft_lstmap.c, line 58
+[test 8] ASSERT_EQ_STR failed: (" World") is not equal to expected (" world"). func main at file srcs/test_ft_lstmap.c, line 59
+[test 10] ASSERT_EQ_STR failed: (" Tokyo!") is not equal to expected (" tokyo!"). func main at file srcs/test_ft_lstmap.c, line 61

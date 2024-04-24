@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:37:05 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/22 19:23:41 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/24 19:24:00 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,5 @@ void	    ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int ft_lstsize(t_list *lst);
-t_list *ft_lstlast(t_list *lst);
 
 #endif

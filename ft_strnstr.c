@@ -6,21 +6,11 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 20:26:35 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/18 22:02:04 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/24 18:37:09 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

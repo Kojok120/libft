@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/24 18:40:36 by kokamoto          #+#    #+#             */
+/*   Updated: 2024/04/24 19:30:24 by kokamoto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void    ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-    t_list    *cnt;
-
-    cnt = lst -> content;
-    del(cnt);
-    free(lst);
+	if (lst == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
 }

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 18:40:52 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/24 19:38:37 by kokamoto         ###   ########.fr       */
+/*   Created: 2024/04/24 19:20:59 by kokamoto          #+#    #+#             */
+/*   Updated: 2024/04/24 19:59:14 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *lst2;
+	t_list	*tmp;
 
-	lst2 = NULL;
-	while (lst != NULL)
+	while (*lst != NULL)
 	{
-		lst2 = lst;
-		lst = lst->next;
+		tmp = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = tmp;
 	}
-	return (lst2);
 }
