@@ -1,0 +1,16 @@
+[test 2] ASSERT_EQ_I failed: ("1") is not equal to expected ("0"). func main at file srcs/test_ft_lstdelone.c, line 50
+Undefined symbols for architecture x86_64:
+  "_ft_lstclear", referenced from:
+      _main in test_ft_lstclear-017c6b.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Undefined symbols for architecture x86_64:
+  "_ft_lstiter", referenced from:
+      _main in test_ft_lstiter-93d7b5.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Undefined symbols for architecture x86_64:
+  "_ft_lstmap", referenced from:
+      _main in test_ft_lstmap-4f09d4.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
