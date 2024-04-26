@@ -6,14 +6,19 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:35:38 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/19 18:54:25 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/26 23:15:28 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *str);
+size_t	ft_min(size_t i, size_t j)
+{
+	if (i <= j)
+		return (i);
+	else
+		return (j);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -21,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 
 	i = 0;
-	substr = (char *)malloc(len + 1);
+	substr = (char *)malloc(ft_min(len, ft_strlen(s)) + 1);
 	if (substr == NULL)
 		return (NULL);
 	while (i < len && start < ft_strlen(s))

@@ -6,13 +6,13 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 21:38:03 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/22 20:27:46 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 00:45:10 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(char const *src, int n)
+static char	*ft_strndup(char const *src, int n)
 {
 	int		i;
 	int		len;
@@ -32,7 +32,7 @@ char	*ft_strndup(char const *src, int n)
 	return (array);
 }
 
-char	**ft_split2(char const *s, char c, char **array, int i)
+static char	**ft_split2(char const *s, char c, char **array, int i)
 {
 	int	j;
 	int	n;
@@ -65,10 +65,16 @@ char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	int		i;
+	int	count;
 
 	i = 0;
+	count = 0;
 	array = (char **)malloc((ft_strlen(s) + 1) * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
 	return (ft_split2(s, c, array, i));
 }
+
+
+//COUNTWORDS で単語数を数え、それ＋１分マロック
+//**arrayのフリー。53行目。

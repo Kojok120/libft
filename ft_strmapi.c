@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:06:21 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/21 21:10:33 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:25:11 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		array[i] = f(i, s[i]);
 		i++;
 	}
+	array[i] = '\0';
 	return (array);
 }

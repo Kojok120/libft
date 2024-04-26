@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:37:05 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/24 19:24:00 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:52:38 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <string.h>
 
 // part1
 int		ft_isalpha(int c);

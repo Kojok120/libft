@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 21:21:12 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/22 19:44:35 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:24:35 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 		i++;
 	}
+	array[i] = '\0';
 	return (array);
 }

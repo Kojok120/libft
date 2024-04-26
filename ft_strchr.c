@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 21:58:23 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/18 20:23:05 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/26 23:24:49 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	if (c == '\0')
+	if ((char)c == '\0')
 	{
 		while (*str)
 			str++;
