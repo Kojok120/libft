@@ -6,11 +6,11 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 21:58:23 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/26 23:24:49 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 00:51:06 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {
