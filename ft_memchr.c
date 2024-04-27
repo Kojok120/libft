@@ -6,11 +6,11 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 19:54:42 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/18 20:09:46 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 14:57:10 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

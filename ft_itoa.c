@@ -6,14 +6,13 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:05:17 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/21 21:03:05 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 14:56:49 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
 	int		len;
 	long	n2;
@@ -35,7 +34,7 @@ int	ft_intlen(int n)
 	return (len);
 }
 
-char	ft_zero_minus(int n)
+static char	ft_zero_minus(int n)
 {
 	if (n == 0)
 		return ('0');

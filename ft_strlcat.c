@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 21:43:08 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/26 22:04:20 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:10:25 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 	dest[dest_len + i] = '\0';
 	return (dest_len + src_len);
 }
-

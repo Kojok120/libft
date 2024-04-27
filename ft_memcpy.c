@@ -6,11 +6,11 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 19:20:22 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/26 22:18:06 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 14:57:31 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

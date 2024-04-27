@@ -6,13 +6,13 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:18:15 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/22 19:44:45 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 14:58:25 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_max(size_t i, size_t j)
+static size_t	ft_max(size_t i, size_t j)
 {
 	if (i >= j)
 		return (i);

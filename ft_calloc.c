@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 22:07:03 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/22 19:42:58 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:07:24 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count == 0 || size == 0)
 	{
-		ptr = malloc(1);
+		ptr = malloc(0);
 		if (ptr == NULL)
 			return (NULL);
 		*((unsigned char *)ptr) = 0;

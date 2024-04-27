@@ -6,16 +6,16 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 19:10:26 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/18 20:18:43 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 14:59:58 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *p;
-	size_t i;
+	unsigned char	*p;
+	size_t			i;
 
 	p = s;
 	i = 0;

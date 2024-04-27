@@ -6,20 +6,41 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 21:38:03 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/27 00:45:10 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:38:43 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	countwords(char const *s, char c)
+{
+	int	i;
+	int	count;
+	int	n;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			n = 0;
+			count++;
+			while (s[i + n] && s[i + n] != c)
+				n++;
+			i += n - 1;
+		}
+		i++;
+	}
+	return (count);
+}
+
 static char	*ft_strndup(char const *src, int n)
 {
 	int		i;
-	int		len;
 	char	*array;
 
-	len = ft_strlen(src);
-	array = (char *)malloc((len + 1) * sizeof(char));
+	array = (char *)malloc((n + 1) * sizeof(char));
 	if (array == NULL)
 		return (NULL);
 	i = 0;
@@ -38,7 +59,7 @@ static char	**ft_split2(char const *s, char c, char **array, int i)
 	int	n;
 
 	j = 0;
-	while (s[i])
+	while (s[++i])
 	{
 		if (s[i] != c)
 		{
@@ -47,15 +68,15 @@ static char	**ft_split2(char const *s, char c, char **array, int i)
 				n++;
 			array[j] = ft_strndup(&s[i], n);
 			if (array[j] == NULL)
-            {
-                while (j-- >=  -1)
-                    free(array[j + 1]);
+			{
+				while (j > 0)
+					free(array[--j]);
+				free(array);
 				return (NULL);
-            }
-            i += n - 1;
+			}
+			i += n - 1;
 			j++;
 		}
-		i++;
 	}
 	array[j] = NULL;
 	return (array);
@@ -64,17 +85,18 @@ static char	**ft_split2(char const *s, char c, char **array, int i)
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
-	int		i;
-	int	count;
 
-	i = 0;
-	count = 0;
-	array = (char **)malloc((ft_strlen(s) + 1) * sizeof(char *));
+	if (s == NULL)
+		return (NULL);
+	array = (char **)malloc((countwords(s, c) + 1) * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
-	return (ft_split2(s, c, array, i));
+	return (ft_split2(s, c, array, -1));
 }
 
-
-//COUNTWORDS で単語数を数え、それ＋１分マロック
-//**arrayのフリー。53行目。
+// int main (void)
+// {
+// 	printf("%d", countwords("hello!", ' '));
+// 	printf("%d", countwords_ori("hello!", ' '));
+// 	return (0);
+// }

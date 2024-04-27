@@ -6,11 +6,11 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 20:10:23 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/18 20:18:12 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 14:57:27 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

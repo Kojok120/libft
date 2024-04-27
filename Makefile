@@ -6,7 +6,7 @@
 #    By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/24 10:34:17 by kokamoto          #+#    #+#              #
-#    Updated: 2024/04/24 19:24:47 by kokamoto         ###   ########.fr        #
+#    Updated: 2024/04/27 19:03:49 by kokamoto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,11 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen
 OBJ = $(SRC:.c=.o)
 BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
+BONUS = FALSE
+
+ifeq ($(BONUS),TRUE)
+	OBJ += $(BONUS_OBJ)
+endif
 
 all: $(NAME)
 
@@ -26,8 +31,8 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(BONUS_OBJ)
-	ar rc $(NAME) $(BONUS_OBJ)
+bonus:
+	@make BONUS=TRUE
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)

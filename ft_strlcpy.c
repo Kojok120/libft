@@ -6,11 +6,11 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 21:32:22 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/18 20:23:32 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/04/27 14:58:08 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
