@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: kokamoto <kokamoto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/24 10:34:17 by kokamoto          #+#    #+#              #
-#    Updated: 2024/04/27 19:03:49 by kokamoto         ###   ########.fr        #
+#    Updated: 2024/04/28 11:07:52 by kokamoto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
