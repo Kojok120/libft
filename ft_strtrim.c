@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:38:44 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/27 00:33:53 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:57:40 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (isset(s1[start], set) == 1)
 		start++;
 	end = ft_strlen(s1);
-	while (isset(s1[end -1], set) == 1 && end > start)
+	if (end > 0)
+	{
+		while (isset(s1[end - 1], set) == 1 && end > start)
 		end--;
+	}
 	if (*set == '\0')
 		ans = (char *)malloc(ft_strlen(s1) + 1);
 	else
