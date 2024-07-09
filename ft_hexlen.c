@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 17:07:47 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/07/09 18:43:13 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/07/09 19:47:37 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ int ft_hexlen(unsigned long long n)
     int len;
 
     len = 0;
+    if (n == 0)
+        return (1);
     while (n > 0)
     {
         n /= 16;

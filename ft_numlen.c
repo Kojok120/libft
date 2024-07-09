@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 15:01:14 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/07/09 16:03:44 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/07/09 20:17:10 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ int	ft_numlen(long long n)
 
     len = 0;
     if (n <= 0)
+    {
+        n = -n;
         len++;
-    while (n)
+    }
+    while (n > 0)
     {
         n /= 10;
         len++;
