@@ -6,13 +6,13 @@
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:35:38 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/27 16:13:00 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/05/08 21:57:17 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_min(size_t i, size_t j)
+static size_t	ft_min(size_t i, size_t j)
 {
 	if (i <= j)
 		return (i);
