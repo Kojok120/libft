@@ -6,7 +6,7 @@
 /*   By: kokamoto <kokamoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:37:05 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/28 11:04:56 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/07/09 17:56:52 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@
 # include <string.h>
 # include <unistd.h>
 
-// part1
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
 size_t				ft_strlen(const char *str);
+int					ft_numlen(long long n);
+int					ft_hexlen(unsigned long long n);
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
@@ -45,8 +46,6 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 int					ft_atoi(const char *str);
 void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *s1);
-
-// part2
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_strjoin(char const *s1, char const *s2);
@@ -57,9 +56,11 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
+void				ft_putint_fd(int n, int fd);
+void				ft_putunsignedint_fd(unsigned int n, int fd);
+void				ft_put_uint_hex_fd(unsigned int n, int fd, char format);
+int					ft_putpointer_fd(void *p, int fd);
 
-// bonus
 typedef struct s_list
 {
 	void			*content;

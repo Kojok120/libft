@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putint_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: kokamoto <kokamoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:23:58 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/04/22 19:43:51 by kokamoto         ###   ########.fr       */
+/*   Updated: 2024/07/09 15:33:41 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putint_fd(int n, int fd)
 {
 	char	c;
 
@@ -36,7 +36,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		c = n % 10 + '0';
 		n = n / 10;
-		ft_putnbr_fd(n, fd);
+		ft_putint_fd(n, fd);
 		write(fd, &c, 1);
 	}
 }
