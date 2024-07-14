@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr_n.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/09 17:07:47 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/07/14 09:16:45 by kokamoto         ###   ########.fr       */
+/*   Created: 2024/07/14 09:13:11 by kokamoto          #+#    #+#             */
+/*   Updated: 2024/07/14 09:17:35 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_hexlen(unsigned long long n)
+char	ft_strchr_n(const char *s, int c)
 {
-	int	len;
+	int	i;
 
-	len = 0;
-	if (n == 0)
-		return (1);
-	while (n > 0)
+	i = 0;
+	while (*(s + i))
 	{
-		n /= 16;
-		len++;
+		if (*(s + i) == c)
+			return (s[i]);
+		i++;
 	}
-	return (len);
+	return (-1);
 }
