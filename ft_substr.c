@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: kokamoto <kojokamo120@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:35:38 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/05/08 21:57:17 by kokamoto         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:15:11 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		j = ft_strlen(s) - start;
 	substr = (char *)malloc(ft_min(len, j) + 1);
-	if (substr == NULL)
+	if (!substr)
 		return (NULL);
 	while (i < len && start < ft_strlen(s))
 	{

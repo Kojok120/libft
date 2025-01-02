@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokamoto <kojokamo120@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 21:56:59 by kokamoto          #+#    #+#             */
-/*   Updated: 2025/01/02 13:10:16 by kokamoto         ###   ########.fr       */
+/*   Created: 2025/01/02 13:10:51 by kokamoto          #+#    #+#             */
+/*   Updated: 2025/01/02 13:11:04 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoll(const char *str)
 {
 	int		i;
 	int		sign;
@@ -29,12 +29,12 @@ int	ft_atoi(const char *str)
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (sign * num > LONG_MAX / 10
-			|| (sign * num * 10 > LONG_MAX - (str[i] - '0')))
-			return ((int)LONG_MAX);
-		if (sign * num < LONG_MIN / 10
-			|| (sign * num * 10 < LONG_MIN + (str[i] - '0')))
-			return ((int)LONG_MIN);
+		if (sign * num > LLONG_MAX / 10 || (sign * num * 10 > LLONG_MAX
+				- (str[i] - '0')))
+			return ((long long)LLONG_MAX);
+		if (sign * num < LLONG_MIN / 10 || (sign * num * 10 < LLONG_MIN
+				+ (str[i] - '0')))
+			return ((long long)LLONG_MIN);
 		num = num * 10 + str[i] - '0';
 		i++;
 	}

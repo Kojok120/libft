@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kokamoto <kokamoto@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: kokamoto <kojokamo120@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:37:05 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/07/14 09:21:23 by kokamoto         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:24:15 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,17 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdarg.h>
+# include <stdint.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX _SC_OPEN_MAX
+# endif
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -45,6 +55,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
 int					ft_atoi(const char *str);
+long long			ft_atoll(const char *str);
 void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *s1);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
@@ -61,6 +72,8 @@ void				ft_putint_fd(int n, int fd);
 void				ft_putunsignedint_fd(unsigned int n, int fd);
 void				ft_put_uint_hex_fd(unsigned int n, int fd, char format);
 int					ft_putpointer_fd(void *p, int fd);
+int					ft_printf(const char *format, ...);
+char				*get_next_line(int fd);
 
 typedef struct s_list
 {
