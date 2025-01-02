@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kokamoto <kokamoto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kokamoto <kojokamo120@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 11:24:56 by kokamoto          #+#    #+#             */
-/*   Updated: 2024/12/26 11:41:22 by kokamoto         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:50:56 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,15 @@ void	ft_process_not_number(int *n, va_list args, char spe)
 		ft_putchar_fd(va_arg(args, int), 1);
 		(*n)++;
 	}
-	if (spe == 's')
+	if (spe == 's' || spe == 'e')
 	{
 		str = va_arg(args, char *);
 		if (str == NULL)
 			str = "(null)";
-		ft_putstr_fd(str, 1);
+		if (spe == 'e')
+			ft_putstr_fd(str, 2);
+		else
+			ft_putstr_fd(str, 1);
 		(*n) += ft_strlen(str);
 	}
 	if (spe == 'p')
@@ -79,13 +82,13 @@ void	ft_process(const char **start, const char **format, int *n,
 	char	spe;
 
 	(*format)++;
-	spe = ft_strchr_n("cspdiuxX%", **format);
+	spe = ft_strchr_n("csepdiuxX%", **format);
 	if (spe == -1)
 	{
 		(*start) = *format;
 		return ;
 	}
-	if (spe == 'c' || spe == 's' || spe == 'p' || spe == '%')
+	if (spe == 'c' || spe == 's' || spe == 'p' || spe == '%' || spe == 'e')
 		ft_process_not_number(n, args, spe);
 	else
 		ft_process_number(n, args, spe);
@@ -119,45 +122,50 @@ int	ft_printf(const char *format, ...)
 	return (n);
 }
 
-// int	main(void)
-// {
-// 	printf("変換指定子がない場合\n");
-// 	printf(" %d\n", printf("hello"));
-// 	printf(" %d\n\n", ft_printf("hello"));
+int	main(void)
+{
+	printf("変換指定子がない場合\n");
+	printf(" %d\n", printf("hello"));
+	printf(" %d\n\n", ft_printf("hello"));
 
-// 	printf("変換指定子がcの場合\n");
-// 	printf(" %d\n", printf("c = %c", 'a'));
-// 	printf(" %d\n\n", ft_printf("c = %c", 'a'));
+	printf("変換指定子がcの場合\n");
+	printf(" %d\n", printf("c = %c", 'a'));
+	printf(" %d\n\n", ft_printf("c = %c", 'a'));
 
-// 	printf("変換指定子がsの場合\n");
-// 	printf(" %d\n", printf("s = %s", "hello"));
-// 	printf(" %d\n\n", ft_printf("s = %s", "hello"));
+	printf("変換指定子がsの場合\n");
+	printf(" %d\n", printf("s = %s", "hello"));
+	printf(" %d\n\n", ft_printf("s = %s", "hello"));
 
-// 	printf("変換指定子がpの場合\n");
-// 	printf(" %d\n", printf("p = %p\n", "hello"));
-// 	printf(" %d\n\n", ft_printf("p = %p\n", "hello"));
+	printf("変換指定子がpの場合\n");
+	printf(" %d\n", printf("p = %p\n", "hello"));
+	printf(" %d\n\n", ft_printf("p = %p\n", "hello"));
 
-// 	printf("変換指定子がdの場合\n");
-// 	printf(" %d\n", printf("d = %d", 42));
-// 	printf(" %d\n\n", ft_printf("d = %d", 42));
+	printf("変換指定子がdの場合\n");
+	printf(" %d\n", printf("d = %d", 42));
+	printf(" %d\n\n", ft_printf("d = %d", 42));
 
-// 	printf("変換指定子がiの場合\n");
-// 	printf(" %d\n", printf("i = %i", 42));
-// 	printf(" %d\n\n", ft_printf("i = %i", 42));
+	printf("変換指定子がiの場合\n");
+	printf(" %d\n", printf("i = %i", 42));
+	printf(" %d\n\n", ft_printf("i = %i", 42));
 
-// 	printf("変換指定子がuの場合\n");
-// 	printf(" %d\n", printf("u = %u", 42));
-// 	printf(" %d\n\n", ft_printf("u = %u", 42));
+	printf("変換指定子がuの場合\n");
+	printf(" %d\n", printf("u = %u", 42));
+	printf(" %d\n\n", ft_printf("u = %u", 42));
 
-// 	printf("変換指定子がxの場合\n");
-// 	printf(" %d\n", printf("x = %x", 42));
-// 	printf(" %d\n\n", ft_printf("x = %x", 42));
+	printf("変換指定子がxの場合\n");
+	printf(" %d\n", printf("x = %x", 42));
+	printf(" %d\n\n", ft_printf("x = %x", 42));
 
-// 	printf("変換指定子がXの場合\n");
-// 	printf(" %d\n", printf("X = %X", 42));
-// 	printf(" %d\n\n", ft_printf("X = %X", 42));
+	printf("変換指定子がXの場合\n");
+	printf(" %d\n", printf("X = %X", 42));
+	printf(" %d\n\n", ft_printf("X = %X", 42));
 
-// 	printf("変換指定子が%%の場合\n");
-// 	printf(" %d\n", printf("%%"));
-// 	printf(" %d\n\n", ft_printf("%%"));
-// 	return (0);
+	printf("変換指定子が%%の場合\n");
+	printf(" %d\n", printf("%%"));
+	printf(" %d\n\n", ft_printf("%%"));
+
+	printf("変換指定子がeの場合\n");
+	printf(" %d\n\n", ft_printf("e = %e", "hello"));
+
+	return (0);
+}
