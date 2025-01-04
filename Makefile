@@ -6,7 +6,7 @@
 #    By: kokamoto <kojokamo120@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/24 10:34:17 by kokamoto          #+#    #+#              #
-#    Updated: 2025/01/04 11:40:42 by kokamoto         ###   ########.fr        #
+#    Updated: 2025/01/04 14:06:51 by kokamoto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,18 +67,22 @@ ft_atoll.c \
 ft_printf.c \
 get_next_line.c \
 
-OBJ = $(SRC:.c=.o)
+OBJ_DIR = obj
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
-all: $(NAME)
+all: $(OBJ_DIR) $(NAME)
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-%.o: %.c
+$(OBJ_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
