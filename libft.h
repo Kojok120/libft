@@ -6,7 +6,7 @@
 /*   By: kokamoto <kojokamo120@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:37:05 by kokamoto          #+#    #+#             */
-/*   Updated: 2025/01/02 13:24:15 by kokamoto         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:18:32 by kokamoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # endif
 
 # ifndef OPEN_MAX
-#  define OPEN_MAX _SC_OPEN_MAX
+#  define OPEN_MAX FOPEN_MAX
 # endif
 
 int					ft_isalpha(int c);
